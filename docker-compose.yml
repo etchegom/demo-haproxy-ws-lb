@@ -1,0 +1,40 @@
+version: '3'
+
+services: 
+  ws-lb:
+    image: haproxy:2.0-alpine
+    volumes:
+      - ./haproxy:/usr/local/etc/haproxy:ro
+    ports:
+      - 8080:80
+    networks:
+      testing_net:
+        ipv4_address: 172.28.1.1
+
+  ws-server-1:
+    build: ./ws
+    command: server
+    networks:
+      testing_net:
+        ipv4_address: 172.28.1.2
+
+  ws-server-2:
+    build: ./ws
+    command: server
+    networks:
+      testing_net:
+        ipv4_address: 172.28.1.3
+
+  # ws-client:
+  #   build: ./ws
+  #   command: client
+  #   networks:
+  #     testing_net:
+  #       ipv4_address: 172.28.1.4
+
+networks:
+  testing_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/16

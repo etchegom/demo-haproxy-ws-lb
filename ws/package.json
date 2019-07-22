@@ -1,0 +1,13 @@
+{
+    "name": "ws_client_server",
+    "version": "1.0.0",
+    "description": "Node WS client/server",
+    "author": "Matthieu Etchegoyen <etchegom@gmail.com>",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "websocket": "^1.0.29"
+    }
+}
