@@ -8,12 +8,15 @@
 ## Run Haproxy and WS servers
 ```
 docker-compose up -d --build
+docker-compose logs -f 
 ```
 
 ## Run a WS client, push data and check logs
 ```
-echo "hello" | websocat ws://localhost:8080 --protocol echo-protocol
-docker-compose logs -f 
+websocat ws://localhost:8080 --protocol echo-protocol
+hello
+world
+...
 ```
 
 ## Useful links:
