@@ -11,5 +11,4 @@ COPY . .
 
 EXPOSE 8080
 
-ENTRYPOINT ["./entrypoint.sh"]
-CMD ["server"]
+CMD ["npm", "start"]

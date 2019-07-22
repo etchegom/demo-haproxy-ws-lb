@@ -25,13 +25,6 @@ services:
       testing_net:
         ipv4_address: 172.28.1.3
 
-  # ws-client:
-  #   build: ./ws
-  #   command: client
-  #   networks:
-  #     testing_net:
-  #       ipv4_address: 172.28.1.4
-
 networks:
   testing_net:
     ipam:
